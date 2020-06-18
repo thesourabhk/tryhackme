@@ -98,40 +98,40 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)\
 vigilante``
 
 -**2**
-gobuster dir -u http://10.10.47.181/island -w num_list.txt 
-===============================================================
-Gobuster v3.0.1
-by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
-===============================================================
-[+] Url:            http://10.10.47.181/island
-[+] Threads:        10
-[+] Wordlist:       num_list.txt
-[+] Status codes:   200,204,301,302,307,401,403
-[+] User Agent:     gobuster/3.0.1
-[+] Timeout:        10s
-===============================================================
+gobuster dir -u http://10.10.47.181/island -w num_list.txt\
+===============================================================\
+Gobuster v3.0.1\
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)\
+===============================================================\
+[+] Url:            http://10.10.47.181/island\
+[+] Threads:        10\
+[+] Wordlist:       num_list.txt\
+[+] Status codes:   200,204,301,302,307,401,403\
+[+] User Agent:     gobuster/3.0.1\
+[+] Timeout:        10s\
+===============================================================\
 2020/06/18 03:01:27 Starting gobuster
-===============================================================
-/2100 (Status: 301)
-New directory was found. (http://10.10.47.181/island/2100/).
+===============================================================\
+/2100 (Status: 301)\
+New directory was found. (http://10.10.47.181/island/2100/).\
 -  There is hint (.ticket). This hint for us to do another dir enumeration for extension .ticket. This time i gonna use gobuster. Gobuster make it easy for me to specify the extension that i need.
 
 -**3**
-gobuster dir -u http://10.10.47.181/island/2100 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x .ticket
-===============================================================
-Gobuster v3.0.1
-by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
-===============================================================
-[+] Url:            http://10.10.47.181/
-[+] Threads:        10
-[+] Wordlist:       /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
-[+] Status codes:   200,204,301,302,307,401,403
-[+] User Agent:     gobuster/3.0.1
-[+] Timeout:        10s
-===============================================================
-2020/06/18 02:24:11 Starting gobuster
-===============================================================
-/green_arrow.ticket (Status: 301)
+gobuster dir -u http://10.10.47.181/island/2100 -w /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt -x .ticket\
+===============================================================\
+Gobuster v3.0.1\
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)\
+===============================================================\
+[+] Url:            http://10.10.47.181/\
+[+] Threads:        10\
+[+] Wordlist:       /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt\
+[+] Status codes:   200,204,301,302,307,401,403\
+[+] User Agent:     gobuster/3.0.1\
+[+] Timeout:        10s\
+===============================================================\
+2020/06/18 02:24:11 Starting gobuster\
+===============================================================\
+/green_arrow.ticket (Status: 301)\
 --content:- This is just a token to get into Queen's Gambit(Ship)    RTy8yhBQdscX
 - We are given a token RTy8yhBQdscX. Seems like this token was encrypt by something. Fire up CyberChef to decrypt our token. After trying, I found that, it was encrypt by Base58.
 
@@ -162,13 +162,21 @@ get file
 
 > download file into our system
 
-So, after ls -al. we can see that, there is 3 image. (Leave_me_alone.png, Queen's Gambit.png and aa.jpg). After download all the file, I try to check each one of it. I have a problem to open Leave_me_alone.png. So, I decide to check the hex using [HxD](https://mh-nexus.de/en/downloads.php?product=HxD20)
+So, after ls -al. we can see that, there is 3 image. (Leave_me_alone.png, Queen's Gambit.png and aa.jpg). After download all the file, I try to check each one of it. I have a problem to open Leave_me_alone.png. So, I decide to check the hex using **xxd** tool.
 
-![image](https://user-images.githubusercontent.com/44063862/83034288-ac8b2880-a06a-11ea-92b1-239a51b84474.png)
+I used the command ``xxd --plain Leave_me_alone.png > myhexdump.txt`` 
 
 I search the header for PNG. To compare with our picture.
 
 ![image](https://user-images.githubusercontent.com/44063862/83034399-c75d9d00-a06a-11ea-9c0f-a2e1a58ac8c6.png)
+
+-head myhexdump.txt(will show the first 10 lines of the file)
+
+-A magic number is a number embedded at or near the beginning of a file that indicates its file format. So let's replace the magic number with the correct magic number of an png image. I googled it and found out that
+
+- for png files it is **89 50 4e 47 0d 0a 1a 0a**
+
+- So let's replace the correct png magic number in the image and now lets go to [cyberchef](https://gchq.github.io/CyberChef/) and use the hex to rander image to get our image
 
 Seems like we have a wrong header. Repair and save. TA_DAA!!
 
