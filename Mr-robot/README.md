@@ -120,32 +120,32 @@ by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)\
 ===============================================================\
 2020/06/20 03:34:32 Starting gobuster\
 ===============================================================\
-/images (Status: 301)
-/blog (Status: 301)
-/sitemap (Status: 200)
-/rss (Status: 301)
-/login (Status: 302)
-/0 (Status: 301)
-/feed (Status: 301)
-/video (Status: 301)
-/image (Status: 301)
-/atom (Status: 301)
-/wp-content (Status: 301)
-/admin (Status: 301)
-/audio (Status: 301)
-/intro (Status: 200)
-/wp-login.php (Status: 200)
-/css (Status: 301)
-/rss2 (Status: 301)
-/license (Status: 200)
-/wp-includes (Status: 301)
-/js (Status: 301)
-/Image (Status: 301)
-/rdf (Status: 301)
-/page1 (Status: 301)
-/readme (Status: 200)
-/robots (Status: 200)
-/dashboard (Status: 302)
+/images (Status: 301)\
+/blog (Status: 301)\
+/sitemap (Status: 200)\
+/rss (Status: 301)\
+/login (Status: 302)\
+/0 (Status: 301)\
+/feed (Status: 301)\
+/video (Status: 301)\
+/image (Status: 301)\
+/atom (Status: 301)\
+/wp-content (Status: 301)\
+/admin (Status: 301)\
+/audio (Status: 301)\
+/intro (Status: 200)\
+/wp-login.php (Status: 200)\
+/css (Status: 301)\
+/rss2 (Status: 301)\
+/license (Status: 200)\
+/wp-includes (Status: 301)\
+/js (Status: 301)\
+/Image (Status: 301)\
+/rdf (Status: 301)\
+/page1 (Status: 301)\
+/readme (Status: 200)\
+/robots (Status: 200)\
+/dashboard (Status: 302)\
 
 Ok, that’s pretty good, isn’t it ?
 
@@ -321,3 +321,4 @@ firstboot_done key-3-of-3.txtcat key-3-of-3.txt
 $$$$$$$$$$$$$$$$$$$$$$$$$$$ # root flag 
 ```
 **By_sourabh_**
+**😎Happy_kacking**
