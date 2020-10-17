@@ -6,6 +6,8 @@
 
 Description: A guide to connecting to our network using OpenVPN.
 
+---
+
 To get started download your configuration file from Access Machines in OpenVPN.See the picture to follow-
 
 
@@ -13,14 +15,14 @@ To get started download your configuration file from Access Machines in OpenVPN.
 
 Then come the part to install OpenVPN ,if you already have it great.
 Otherwise you can install it by following command-
-
+```
 ## sudo apt-get install openvpn
-
+```
 You would have notice the configuration you downloaded is named as YourUserName.opvn
 Once you have installed openvpn on your machine then go the the directory of that configuration file (using cd command) and there type following command as shown below-
-
+```
 ## sudo openvpn Filename.ovpn
-
+```
 It will start connecting and when terminal show you regarding sequence completed as shown here
 
 ![alt text](https://miro.medium.com/max/700/1*-OslDkDUN0H3SyE7omyvvQ.png) 
