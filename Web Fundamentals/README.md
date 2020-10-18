@@ -36,6 +36,7 @@ This can also be done in your browser by devlopers tools or simply press F12.If 
 ```
 curl http://<ip>:8081/ctf/getcookie -c cookielist.txt
 ```
+![image](https://miro.medium.com/max/700/1*ZTPEN0HnCRAlF5cPRDkAYA.png)
 
 ### 4.What's the "Set a cookie" flag?
 
@@ -45,6 +46,7 @@ curl http://<ip>:8081/ctf/sendcookie --cookie flagpls=flagpls
 
 Another way of doing this by devlopers tool.Set a cookie with name "flagpls" and value "flagpls" in your devtools and make a GET request to /ctf/sendcookie.
 
+![image](https://miro.medium.com/max/700/1*hQITVjGU49VXceKFmtL1jg.png)
 
 
 
